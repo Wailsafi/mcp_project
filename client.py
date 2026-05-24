@@ -18,6 +18,9 @@ async def main():
             await Session.initialize()
             tools= await Session.list_tools()
             print("Available tools:", tools)
+            processed_data=await Session.call_tool("processData", {"data": "sample data to process"})
+            print("Processed Data:", processed_data)
+            
 
 if __name__ == "__main__":
     asyncio.run(main())
